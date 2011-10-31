@@ -20,6 +20,6 @@ include_recipe "apache2"
 include_recipe "apache2::#{node[:django][:web_server]}"
 include_recipe "python"
 
-package "python-django" do
+package "Django" do
   action :install
 end

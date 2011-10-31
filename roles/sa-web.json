@@ -1,0 +1,25 @@
+{
+  "name": "sa-web",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Signature Access web node.",
+  "default_attributes" : {
+    "pip_loader" : {
+      "pip_packages" :  [
+        "mysql-python",
+        "PIL",
+        "django",
+        "south"
+      ]
+    },
+    "apache2" : {
+      "server_alias": "/",
+      "wsgi_path": "/vagrant/django.wsgi"
+    }
+  },
+  "run_list": [
+    "recipe[apt]",
+    "recipe[python]",
+    "recipe[python-pip]"
+  ]
+}

@@ -182,7 +182,7 @@ template "#{node[:apache][:dir]}/ports.conf" do
 end
 
 template "#{node[:apache][:dir]}/sites-available/default" do
-  source "default-site.erb"
+  source "mod_wsgi_app.erb"
   owner node[:apache][:user]
   group node[:apache][:group]
   mode 0644

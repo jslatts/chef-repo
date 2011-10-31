@@ -1,3 +1,3 @@
 <VirtualHost *:80>
-  WSGIScriptAlias <% node[:apache2][:server_alias] %> <%= node[:apache2][:wsgi_path] %>
+  WSGIScriptAlias <%= node[:apache2][:server_alias] %> <%= node[:apache2][:wsgi_path] %>
 </VirtualHost>

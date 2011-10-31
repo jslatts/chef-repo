@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: python-pip
+# Cookbook Name: apt-loader
 # Recipe:: default
 #
 # Copyright 2009, Opscode, Inc.
@@ -16,12 +16,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-include_recipe "apache2"
-include_recipe "apache2::#{node[:django][:web_server]}"
-include_recipe "python"
+include_recipe "apt"
 
-for pkg in node[:pip_loader][:pip_packages]
-  python_pip pkg do
+for pkg in node[:apt_loader][:apt_packages]
+  package pkg do
     action :install
   end
 end

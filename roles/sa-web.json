@@ -12,14 +12,24 @@
         "south"
       ]
     },
+    "apt_loader" : {
+      "apt_packages" :  [
+        "python-profiler"
+      ]
+    },
     "apache2" : {
       "server_alias": "/",
       "wsgi_path": "/vagrant/django.wsgi"
     }
   },
   "run_list": [
+    "recipe[build-essential]",
     "recipe[apt]",
     "recipe[python]",
-    "recipe[python-pip]"
+    "recipe[mysql]",
+    "recipe[freetype]",
+    "recipe[pip-loader]",
+    "recipe[apt-loader]",
+    "recipe[aggdraw]"
   ]
 }
